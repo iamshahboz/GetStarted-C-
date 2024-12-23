@@ -1,0 +1,14 @@
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\bin\Debug\net9.0-windows\Restaurant.exe
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\bin\Debug\net9.0-windows\Restaurant.deps.json
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\bin\Debug\net9.0-windows\Restaurant.runtimeconfig.json
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\bin\Debug\net9.0-windows\Restaurant.dll
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\bin\Debug\net9.0-windows\Restaurant.pdb
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.AssemblyInfoInputs.cache
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.AssemblyInfo.cs
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.csproj.CoreCompileInputs.cache
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.dll
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\refint\Restaurant.dll
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.pdb
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\Restaurant.genruntimeconfig.cache
+C:\Users\shahboz.abdulkhairov\RiderProjects\Restaurant\Restaurant\obj\Debug\net9.0-windows\ref\Restaurant.dll
