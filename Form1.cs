@@ -31,9 +31,18 @@ public partial class Form1 : Form
 
     private void CopyRequest_Click(object sender, EventArgs e)
     {
-        order = _employee.CopyRequest();
-        var inspectResult = _employee.Inspect(order);
-        label2.Text = inspectResult;
+        try
+        {
+            order = _employee.CopyRequest();
+            var inspectResult = _employee.Inspect(order);
+            label2.Text = inspectResult;
+
+        }
+        catch (Exception exception)
+        {
+            ResultsList.Items.Add(exception.Message);
+        }
+        
     }
 
     private void PrepareFood_Click(object sender, EventArgs e)
