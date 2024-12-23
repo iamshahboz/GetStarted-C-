@@ -32,7 +32,6 @@ partial class Form1
         SubmitRequest = new System.Windows.Forms.Button();
         Chicken = new System.Windows.Forms.RadioButton();
         EggOrder = new System.Windows.Forms.RadioButton();
-        textBox1 = new System.Windows.Forms.TextBox();
         CopyRequest = new System.Windows.Forms.Button();
         PrepareFood = new System.Windows.Forms.Button();
         label1 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@ partial class Form1
         Menu = new System.Windows.Forms.GroupBox();
         label3 = new System.Windows.Forms.Label();
         ResultsList = new System.Windows.Forms.ListBox();
+        textBox1 = new System.Windows.Forms.TextBox();
         Menu.SuspendLayout();
         SuspendLayout();
         // 
@@ -55,6 +55,7 @@ partial class Form1
         // 
         // Chicken
         // 
+        Chicken.Checked = true;
         Chicken.Location = new System.Drawing.Point(20, 22);
         Chicken.Name = "Chicken";
         Chicken.Size = new System.Drawing.Size(76, 25);
@@ -62,7 +63,6 @@ partial class Form1
         Chicken.TabStop = true;
         Chicken.Text = "ChickenOrder";
         Chicken.UseVisualStyleBackColor = true;
-        Chicken.CheckedChanged += ChickenOrder;
         // 
         // EggOrder
         // 
@@ -70,17 +70,8 @@ partial class Form1
         EggOrder.Name = "EggOrder";
         EggOrder.Size = new System.Drawing.Size(65, 25);
         EggOrder.TabIndex = 2;
-        EggOrder.TabStop = true;
         EggOrder.Text = "Egg";
         EggOrder.UseVisualStyleBackColor = true;
-        EggOrder.CheckedChanged += EggsOrder;
-        // 
-        // textBox1
-        // 
-        textBox1.Location = new System.Drawing.Point(59, 110);
-        textBox1.Name = "textBox1";
-        textBox1.Size = new System.Drawing.Size(92, 23);
-        textBox1.TabIndex = 3;
         // 
         // CopyRequest
         // 
@@ -100,6 +91,7 @@ partial class Form1
         PrepareFood.TabIndex = 5;
         PrepareFood.Text = "Prepare Food";
         PrepareFood.UseVisualStyleBackColor = true;
+        PrepareFood.Click += PrepareFood_Click;
         // 
         // label1
         // 
@@ -127,7 +119,6 @@ partial class Form1
         Menu.TabIndex = 9;
         Menu.TabStop = false;
         Menu.Text = "Menu";
-        Menu.Enter += groupBox1_Enter;
         // 
         // label3
         // 
@@ -136,7 +127,6 @@ partial class Form1
         label3.Size = new System.Drawing.Size(63, 15);
         label3.TabIndex = 10;
         label3.Text = "Results";
-        label3.Click += Results_Click;
         // 
         // ResultsList
         // 
@@ -146,11 +136,19 @@ partial class Form1
         ResultsList.Size = new System.Drawing.Size(358, 109);
         ResultsList.TabIndex = 11;
         // 
+        // textBox1
+        // 
+        textBox1.Location = new System.Drawing.Point(67, 110);
+        textBox1.Name = "textBox1";
+        textBox1.Size = new System.Drawing.Size(45, 23);
+        textBox1.TabIndex = 12;
+        // 
         // Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         ClientSize = new System.Drawing.Size(751, 450);
+        Controls.Add(textBox1);
         Controls.Add(ResultsList);
         Controls.Add(label3);
         Controls.Add(Menu);
@@ -158,7 +156,6 @@ partial class Form1
         Controls.Add(label1);
         Controls.Add(PrepareFood);
         Controls.Add(CopyRequest);
-        Controls.Add(textBox1);
         Controls.Add(SubmitRequest);
         Text = "Restaurant App";
         Menu.ResumeLayout(false);
