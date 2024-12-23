@@ -1,4 +1,4 @@
-﻿namespace Restaurant
+﻿namespace Restaurant.orders
 {
     public class EggOrder
     {
@@ -33,6 +33,21 @@
             {
                 return _quality; // Return calculated quality
             }
+        }
+
+        public void Crack()
+        {
+            
+        }
+
+        public void Cook()
+        {
+            
+        }
+
+        public void DiscardShell()
+        {
+            
         }
     }
 }
