@@ -3,6 +3,7 @@
 public class Employee
 {
     private object _previousOrder;
+    private object _lastPreparedOrder = null;
     public object  NewRequest(int quantity, string menuItem)
     {
         if (menuItem == "Chicken")
@@ -21,11 +22,19 @@ public class Employee
 
     public object CopyRequest()
     {
-        return _previousOrder;
+        if (_previousOrder == null)
+        {
+            throw new InvalidOperationException("No previous request exists. Please create a new request first.");
+        }
+        else
+        {
+            return _previousOrder;
+        }
     }
 
     public string Inspect(object order)
     {
+        
         if (order is ChickenOrder)
         {
             return  "No inspection required";
@@ -38,6 +47,11 @@ public class Employee
 
     public string PrepareFood(object order)
     {
+        if (_lastPreparedOrder == order)
+        {
+            throw new InvalidOperationException("Food has already been prepared");
+        }
+
         if (order is ChickenOrder)
         {
             ((ChickenOrder)order).CutUp();
