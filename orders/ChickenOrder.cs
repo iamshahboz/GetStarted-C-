@@ -15,17 +15,25 @@
             return _quantity;
         }
 
-        public void CutUp()
+        public List<string> CutUp()
         {
+            var messages = new List<string>();
             for (int i = 0; i < _quantity; i++)
             {
-                Console.WriteLine($"Cutting up chicken {i+1}");
+                messages.Add($"Chicken piece {i} has been cut up.");
             }
+
+            return messages;
         }
 
-        public void Cook()
+        public List<string> Cook()
         {
-            Console.WriteLine("Cooking the chichens...");
+            var messages = new List<string>();
+            for (int i = 0; i < _quantity; i++)
+            {
+                messages.Add($"Chicken piece {i} has been cooked.");
+            }
+            return messages;
         }
 
     }

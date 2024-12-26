@@ -3,16 +3,19 @@
     public class EggOrder
     {
         private int _quantity;
-        private int _quality;
         private static int _instanceCount = 0;
+        private List<int?> _qualities;
 
         // Constructor accepting quantity
         public EggOrder(int quantity)
         {
+            _qualities = new List<int?>();
             _quantity = quantity;
             _instanceCount++;
+            
+            
             // Calculate quality only once when the instance is created
-            _quality = new Random().Next(1, 101); // Random value between 1 and 100
+            //_quality = new Random().Next(1, 101); // Random value between 1 and 100
         }
 
         // Method to get the quantity
@@ -22,23 +25,45 @@
         }
 
         // Method to get the quality, returns nullable int
-        public int? GetQuality()
+        public List<int?> GenerateQualities()
         {
-            // Simulate the employee forgetting the quality 1/2 of the time
-            if (_instanceCount % 3 == 0) // 2nd, 4th, 6th... instance
-            {
-                return null; // Employee forgets the quality
-            }
-            else
-            {
-                return _quality; // Return calculated quality
-            }
-        }
+            var random = new Random();
 
-        public void Crack()
-        {
-            
+            for (int i = 0; i < _quantity; i++)
+            {
+                // Simulate the employee forgetting the quality every 3rd instance
+                // if (_instanceCount % 3 == 0)
+                // {
+                //     _qualities.Add(null);
+                // }
+                //else
+                //{
+                _qualities.Add(random.Next(1, 101)); // Random value between 1 and 100
+                //}
+            }
+            return _qualities;
         }
+        
+        
+
+        
+        public List<int?> GetQualities()
+        {
+            return _qualities;
+        }
+        
+
+        // public void Crack()
+        // {
+        //     for (int i = 0; i < _quantity; i++)
+        //     {
+        //         // var quality = getQuality();
+        //         // if (quality < 25 || quality is not null)
+        //         // {
+        //         //     // rotten egg
+        //         // }
+        //     }
+        // }
 
         public void Cook()
         {

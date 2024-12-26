@@ -1,4 +1,6 @@
-﻿namespace Restaurant.orders;
+﻿using System.Text;
+
+namespace Restaurant.orders;
 
 public class Employee
 {
@@ -32,44 +34,43 @@ public class Employee
         }
     }
 
-    public string Inspect(object order)
+    public List<int> Inspect(object order)
     {
         
         if (order is ChickenOrder)
         {
-            return  "No inspection required";
+            throw new InvalidOperationException("No inspection required");
         }
         else
         {
-            return ((EggOrder)order).GetQuality().ToString();
+            var qualities = ((EggOrder)order).GetQualities();
+            // Filter out null values or replace them with a default
+            return qualities.Where(q => q.HasValue).Select(q => q.Value).ToList();
         }
     }
 
-    public string PrepareFood(object order)
+    public List<string> PrepareFood(object order)
     {
+        var messages = new List<string>();
+        
         if (_lastPreparedOrder == order)
         {
             throw new InvalidOperationException("Food has already been prepared");
         }
 
-        if (order is ChickenOrder)
+        if (order is ChickenOrder chickenOrder)
         {
-            ((ChickenOrder)order).CutUp();
+            messages.AddRange(chickenOrder.CutUp());
+            messages.AddRange(chickenOrder.Cook());
+            messages.Add("Chicken preparation completed");
             
-            ((ChickenOrder)order).Cook();
-
-            return "Chicken preparation completed";
         }
-        else
+        else if (order is EggOrder eggOrder)
         {
-            ((EggOrder)order).GetQuantity();
-            
-            ((EggOrder)order).DiscardShell();
-
-            ((EggOrder)order).Cook();
-            
-            return "Egg preparation completed. Your egg is rotten";
+            messages.Add($"Egg order contains {eggOrder.GetQuantity()} eggs");
         }
-        
+        _lastPreparedOrder = order;
+        return messages;
+
     }
 }
